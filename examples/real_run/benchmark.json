@@ -1,0 +1,166 @@
+{
+  "start": "2017-01-01",
+  "end": "2017-01-08",
+  "repeats": 7,
+  "server": {
+    "version": "8.4.7"
+  },
+  "existing_indexes": [
+    {
+      "Table": "raw_orders",
+      "Non_unique": 0,
+      "Key_name": "PRIMARY",
+      "Seq_in_index": 1,
+      "Column_name": "raw_row_id",
+      "Collation": "A",
+      "Cardinality": 98673,
+      "Sub_part": null,
+      "Packed": null,
+      "Null": "",
+      "Index_type": "BTREE",
+      "Comment": "",
+      "Index_comment": "",
+      "Visible": "YES",
+      "Expression": null
+    },
+    {
+      "Table": "raw_orders",
+      "Non_unique": 1,
+      "Key_name": "idx_source_key",
+      "Seq_in_index": 1,
+      "Column_name": "order_id",
+      "Collation": "A",
+      "Cardinality": 93624,
+      "Sub_part": null,
+      "Packed": null,
+      "Null": "YES",
+      "Index_type": "BTREE",
+      "Comment": "",
+      "Index_comment": "",
+      "Visible": "YES",
+      "Expression": null
+    },
+    {
+      "Table": "raw_orders",
+      "Non_unique": 1,
+      "Key_name": "idx_customer_id",
+      "Seq_in_index": 1,
+      "Column_name": "customer_id",
+      "Collation": "A",
+      "Cardinality": 98673,
+      "Sub_part": null,
+      "Packed": null,
+      "Null": "YES",
+      "Index_type": "BTREE",
+      "Comment": "",
+      "Index_comment": "",
+      "Visible": "YES",
+      "Expression": null
+    }
+  ],
+  "stages": [
+    {
+      "stage": "before_index",
+      "results": {
+        "01_baseline": [
+          {
+            "orders": 40
+          }
+        ],
+        "02_optimized": [
+          {
+            "orders": 40
+          }
+        ]
+      },
+      "plans": {
+        "01_baseline": [
+          {
+            "EXPLAIN": "-> Aggregate: count(0)  (cost=11070 rows=1) (actual time=38..38 rows=1 loops=1)\n    -> Filter: ((raw_orders.order_status = 'delivered') and (cast(raw_orders.order_purchase_timestamp as date) >= <cache>((@bench_start))) and (cast(raw_orders.order_purchase_timestamp as date) < <cache>((@bench_end))))  (cost=10084 rows=9867) (actual time=0.112..38 rows=40 loops=1)\n        -> Table scan on raw_orders  (cost=10084 rows=98673) (actual time=0.0477..16 rows=99441 loops=1)\n"
+          }
+        ],
+        "02_optimized": [
+          {
+            "EXPLAIN": "-> Aggregate: count(0)  (cost=9316 rows=1) (actual time=37.2..37.2 rows=1 loops=1)\n    -> Filter: ((raw_orders.order_status = 'delivered') and (raw_orders.order_purchase_timestamp >= <cache>((@bench_start))) and (raw_orders.order_purchase_timestamp < <cache>((@bench_end))))  (cost=9206 rows=1096) (actual time=0.23..37.2 rows=40 loops=1)\n        -> Table scan on raw_orders  (cost=9206 rows=98673) (actual time=0.0497..17 rows=99441 loops=1)\n"
+          }
+        ]
+      },
+      "milliseconds": {
+        "01_baseline": [
+          32.55783400004475,
+          32.07753300011973,
+          32.02267099982237,
+          32.48855099991488,
+          32.99177200005943,
+          31.862214000057065,
+          32.07330599980196
+        ],
+        "02_optimized": [
+          31.53651100001298,
+          29.203784999936033,
+          29.593892999855598,
+          30.89278699985698,
+          30.595367000159968,
+          29.225407000012638,
+          29.801561000112997
+        ]
+      },
+      "median_ms": {
+        "01_baseline": 32.07753300011973,
+        "02_optimized": 29.801561000112997
+      }
+    },
+    {
+      "stage": "after_index",
+      "results": {
+        "01_baseline": [
+          {
+            "orders": 40
+          }
+        ],
+        "02_optimized": [
+          {
+            "orders": 40
+          }
+        ]
+      },
+      "plans": {
+        "01_baseline": [
+          {
+            "EXPLAIN": "-> Aggregate: count(0)  (cost=10444 rows=1) (actual time=33.1..33.1 rows=1 loops=1)\n    -> Filter: ((cast(raw_orders.order_purchase_timestamp as date) >= <cache>((@bench_start))) and (cast(raw_orders.order_purchase_timestamp as date) < <cache>((@bench_end))))  (cost=5513 rows=49315) (actual time=0.114..33.1 rows=40 loops=1)\n        -> Covering index lookup on raw_orders using idx_benchmark_status_purchase (order_status='delivered')  (cost=5513 rows=49315) (actual time=0.0663..13.7 rows=96478 loops=1)\n"
+          }
+        ],
+        "02_optimized": [
+          {
+            "EXPLAIN": "-> Aggregate: count(0)  (cost=13.5 rows=1) (actual time=0.0261..0.0261 rows=1 loops=1)\n    -> Filter: ((raw_orders.order_status = 'delivered') and (raw_orders.order_purchase_timestamp >= <cache>((@bench_start))) and (raw_orders.order_purchase_timestamp < <cache>((@bench_end))))  (cost=9.47 rows=40) (actual time=0.00856..0.0239 rows=40 loops=1)\n        -> Covering index range scan on raw_orders using idx_benchmark_status_purchase over (order_status = 'delivered' AND '2017-01-01 00:00:00' <= order_purchase_timestamp < '2017-01-08 00:00:00')  (cost=9.47 rows=40) (actual time=0.00701..0.0138 rows=40 loops=1)\n"
+          }
+        ]
+      },
+      "milliseconds": {
+        "01_baseline": [
+          29.0556249999554,
+          29.49071000011827,
+          28.71314899994104,
+          32.486858999845936,
+          29.22238299993296,
+          30.17147799982922,
+          29.350602000022263
+        ],
+        "02_optimized": [
+          0.37159099997552403,
+          0.24223800005529483,
+          0.7301119999283401,
+          0.23842399991735874,
+          0.4445290001058311,
+          0.1898109999274311,
+          0.4231269999763754
+        ]
+      },
+      "median_ms": {
+        "01_baseline": 29.350602000022263,
+        "02_optimized": 0.37159099997552403
+      }
+    }
+  ],
+  "note": "Warm-cache client wall time including network; no speedup is guaranteed."
+}

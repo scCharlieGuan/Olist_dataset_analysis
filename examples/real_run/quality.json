@@ -1,0 +1,257 @@
+[
+  {
+    "check_name": "customers_nonempty",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "customers_duplicate_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "customers_missing_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "products_nonempty",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "products_duplicate_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "products_missing_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "sellers_nonempty",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "sellers_duplicate_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "sellers_missing_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "category_translation_nonempty",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "category_translation_duplicate_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "category_translation_missing_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "orders_nonempty",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "orders_duplicate_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "orders_missing_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_items_nonempty",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_items_duplicate_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_items_missing_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_payments_nonempty",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_payments_duplicate_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_payments_missing_key",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_reviews_nonempty",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "orders_customer_id_orphan",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_items_order_id_orphan",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_items_product_id_orphan",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_items_seller_id_orphan",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_payments_order_id_orphan",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "order_reviews_order_id_orphan",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "missing_purchase_time",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "unknown_order_status",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "invalid_item_amount",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "invalid_payment",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "invalid_review_score",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "missing_customer_unique_id",
+    "severity": "WARN",
+    "violations": 0
+  },
+  {
+    "check_name": "multiple_reviews_per_order",
+    "severity": "WARN",
+    "violations": 547
+  },
+  {
+    "check_name": "reused_review_id",
+    "severity": "WARN",
+    "violations": 789
+  },
+  {
+    "check_name": "missing_item_shipping_limit",
+    "severity": "WARN",
+    "violations": 0
+  },
+  {
+    "check_name": "missing_approval_time",
+    "severity": "WARN",
+    "violations": 14
+  },
+  {
+    "check_name": "missing_carrier_time",
+    "severity": "WARN",
+    "violations": 2
+  },
+  {
+    "check_name": "missing_delivery_time",
+    "severity": "WARN",
+    "violations": 8
+  },
+  {
+    "check_name": "invalid_delivery_chronology",
+    "severity": "WARN",
+    "violations": 189
+  },
+  {
+    "check_name": "missing_customer_state",
+    "severity": "WARN",
+    "violations": 0
+  },
+  {
+    "check_name": "unmapped_product_category",
+    "severity": "WARN",
+    "violations": 623
+  },
+  {
+    "check_name": "fact_one_row_per_order",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "fact_distinct_orders",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "item_gmv_reconciliation",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "freight_reconciliation",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "payment_reconciliation",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "category_gmv_reconciliation",
+    "severity": "FAIL",
+    "violations": 0
+  },
+  {
+    "check_name": "delivered_without_items",
+    "severity": "WARN",
+    "violations": 0
+  },
+  {
+    "check_name": "item_payment_gap_over_one_cent",
+    "severity": "WARN",
+    "violations": 303
+  }
+]

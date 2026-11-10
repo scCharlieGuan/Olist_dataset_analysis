@@ -1,0 +1,9 @@
+﻿order_status,orders,order_share,item_amount,payment_amount,orders_without_items
+delivered,96211,0.9709,13181027.13,15375875.44,0
+shipped,1097,0.0111,149599.99,175664.52,0
+unavailable,602,0.0061,0.00,124221.54,602
+canceled,580,0.0059,92183.10,133101.86,132
+processing,299,0.0030,60077.22,68981.49,0
+invoiced,296,0.0030,58615.74,65706.54,0
+created,5,0.0001,0.00,688.10,5
+approved,2,0.0000,209.60,241.08,0

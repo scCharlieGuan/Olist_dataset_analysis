@@ -1,0 +1,6 @@
+﻿delay_bucket,eligible_orders,reviewed_orders,bad_reviews,bad_review_rate,review_coverage,avg_review_score
+0_on_time,89672,89182,8247,0.0925,0.9945,4.29
+1_late_1_3,1869,1851,595,0.3214,0.9904,3.29
+2_late_4_7,1802,1748,1183,0.6768,0.9700,2.10
+3_late_8_14,1478,1446,1159,0.8015,0.9783,1.67
+4_late_15_plus,1382,1333,1044,0.7832,0.9645,1.72

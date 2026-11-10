@@ -1,0 +1,128 @@
+{
+  "generated_at_utc": "2026-11-03T08:18:35.667365+00:00",
+  "database": "olist_analytics",
+  "start_inclusive": "2017-01-01",
+  "end_exclusive": "2018-09-01",
+  "min_orders": 30,
+  "server_version": "8.4.7",
+  "queries": [
+    {
+      "name": "01_monthly_performance",
+      "rows": 20,
+      "sql_sha256": "0ef9b5e52f27dfff47e4647756a48276cd6a93592101cabc3e2f1ebf8617626e",
+      "csv_sha256": "8ced445e46a4ebbe4e3f76e9cd1717e5f41824fd712359d86c10cca647020bb9"
+    },
+    {
+      "name": "02_order_status",
+      "rows": 8,
+      "sql_sha256": "d9f40ff15c6a8bcb2d6043392dedd4808a7ba96570707554bc2c5e99e52ce661",
+      "csv_sha256": "066801330bd3e30127ff365fcb557dc309470080e45804be641669f1f6cbd146"
+    },
+    {
+      "name": "03_category_contribution",
+      "rows": 74,
+      "sql_sha256": "aac0b6037643f757568367ff884ad2cb60efeffb8ad6a85e04606480c59c7860",
+      "csv_sha256": "c81e7fa258bca32e27862e6c8f6cc6a2e7bd888df0043821f5410dfc4166cff8"
+    },
+    {
+      "name": "04_monthly_category_rank",
+      "rows": 100,
+      "sql_sha256": "e755ee2ac2aaad3f75ea84232bda67964de7747d19b2b9d3b616736712fe5cb3",
+      "csv_sha256": "41370a521d863603514a658d82769dd54dddb1e0c58ae3b20f75b6f39437c346"
+    },
+    {
+      "name": "05_monthly_fulfillment",
+      "rows": 20,
+      "sql_sha256": "3df1700958a3ac8ffb332c3bea57be901a39445a93e8767bad096faafce49bc0",
+      "csv_sha256": "c0f0921543995bb3248f2c7e63fe72ef8115c956ac959718f13b238aff6c3c1f"
+    },
+    {
+      "name": "06_state_fulfillment",
+      "rows": 27,
+      "sql_sha256": "6afcc243fad1343f8e901404a767e7c5d44015f90d3b240127f33d80e3a18886",
+      "csv_sha256": "9b3898e7c2cd236a3b3ce4a23d330ca0ceb07037f50e5c3fe934a6f44b1529f8"
+    },
+    {
+      "name": "07_seller_fulfillment",
+      "rows": 625,
+      "sql_sha256": "c2d3f77477a9a5925bb83432d8dc7836b751042b7972d01f69e13504c05d9be9",
+      "csv_sha256": "96c6910a6a8a050bcef97e226e2e2c9c51a73818d7163a571095f95ccf694a55"
+    },
+    {
+      "name": "08_delay_reviews",
+      "rows": 5,
+      "sql_sha256": "f39efe6b1cd9d829045d5b9004379a3ba3ef6f47818d629df9b6e6703ccf0aaf",
+      "csv_sha256": "e8f0793c3367e619510a5f47c40e300acc87de4ffb1e20374f7424340b0b69e9"
+    },
+    {
+      "name": "09_category_delay_reviews",
+      "rows": 129,
+      "sql_sha256": "78f85a27c47fbd5eaa48780295fa71ad8c6a8959b7f18ac2fe94d227f678c8ae",
+      "csv_sha256": "0317cea9d03c3a2d22cb86f3af9f404b5b4e8cc4600c1fc153e7195442231ebf"
+    },
+    {
+      "name": "10_state_month_review_comparison",
+      "rows": 49,
+      "sql_sha256": "b1e72857255291998eabc95d7fdd1c83c452660266222fc09d655bc2b7910e37",
+      "csv_sha256": "159c485035ac0a6f5b29ed8a2a2449a49303e10b09b0dced6cc4db9eb64c8189"
+    },
+    {
+      "name": "11_payment_reconciliation",
+      "rows": 20,
+      "sql_sha256": "81b97fc63f739317a3445fe2c9134ba9254345c18167886c8c84043b7f605bce",
+      "csv_sha256": "1e0dd143bf153af3e436f8770b849b28665f3764a9680d3760e6f4c5b492863a"
+    },
+    {
+      "name": "12_coverage_audit",
+      "rows": 25,
+      "sql_sha256": "9a7ad4a5c9d806c12209e4851d1587d51bf03e2e1e7af2f6538efc44eb53f4c0",
+      "csv_sha256": "d88c94d517a932cf6409733a00e2541de70aadb159890b0b8f2d90657ceb213b"
+    }
+  ],
+  "import_manifest": {
+    "data_origin": "user_supplied_olist_csv",
+    "files": [
+      {
+        "file": "olist_customers_dataset.csv",
+        "sha256": "983a422239e1712ded753b3bf9ecf47dc73f144d306029dcfa99e70a226883d2",
+        "rows": 99441
+      },
+      {
+        "file": "olist_products_dataset.csv",
+        "sha256": "3e6569628a17fbc75fd206ee357b59e20364b9afa90f5b6cd5b4d624c58aa9cc",
+        "rows": 32951
+      },
+      {
+        "file": "olist_sellers_dataset.csv",
+        "sha256": "1f643d2b950373b85735e7794b20986f528d7a000432e7c6f9bcbb44d0846a0e",
+        "rows": 3095
+      },
+      {
+        "file": "product_category_name_translation.csv",
+        "sha256": "a81f0d1f27b27e7293f761bc79e3ce8f348ee39c4b3ed3e49bde38f478586278",
+        "rows": 71
+      },
+      {
+        "file": "olist_orders_dataset.csv",
+        "sha256": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf",
+        "rows": 99441
+      },
+      {
+        "file": "olist_order_items_dataset.csv",
+        "sha256": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279",
+        "rows": 112650
+      },
+      {
+        "file": "olist_order_payments_dataset.csv",
+        "sha256": "4f713964f2815dbbaa40b9488268c55aac3627bfce5aa96cf58d1f3616de3cc0",
+        "rows": 103886
+      },
+      {
+        "file": "olist_order_reviews_dataset.csv",
+        "sha256": "012b61c7593e34f51fa614efdf802b9c7056ce6aae5307ddb93236e7cfc797d7",
+        "rows": 99224
+      }
+    ]
+  },
+  "quality_sha256": "b139e345afb4e3934c6be26dda7cd6371bb29d0056005b99431d39b56921a219"
+}
